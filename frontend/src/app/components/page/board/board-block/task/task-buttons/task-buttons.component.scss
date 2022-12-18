@@ -1,0 +1,111 @@
+.task-buttons {
+    &__block {
+        &-more {
+            display:  flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__input {
+        width: 80%;
+        height: 20px;
+        padding: 0 10px;
+        margin: 5px 0;
+        box-shadow: none;
+        color: rgb(0, 98, 179);
+        border: 2px rgb(0, 98, 179) solid;
+        border-radius: 20px;
+        transition: transform .5s;
+        font-size: 10px;
+
+        &:hover {
+            transform: scale(1.05);
+
+            &::placeholder {
+                transition: color .5s;
+                color: rgb(0, 98, 179);
+            }
+        }
+    }
+}
+
+.button {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 5px;
+    border-radius: 100px;
+    color: white;
+    border: 3px solid rgb(0, 98, 179);
+    transition: 0.3s;
+    display: flex;
+    align-self: center;
+
+    &:hover {
+        border: 3px solid rgb(0, 98, 179);
+        transform: scale(1.1);
+        background-color: rgb(0, 98, 179);
+        color: white;
+        z-index: 20;
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+
+    &-more {
+        width: 100%;
+        justify-content: left;
+    }
+}
+
+.comments {
+    &-creation {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    &-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    &-item {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.add-comment {
+    border-radius: 100%;
+    margin: 0 3px;
+}
+
+.delete-comment {
+    display: flex;
+    justify-content: center;
+    height: 10px;
+    width: 10px;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(203, 43, 43);
+    border-radius: 50px;
+    border: 3px solid rgb(203, 43, 43);
+    transition: 0.3s;
+
+    &:hover {
+        border: 3px solid rgb(203, 43, 43);
+        transform: scale(1.1);
+        background-color: rgb(203, 43, 43);
+        color: white;
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+}
+
+.image {
+    height: 10px;
+    filter: invert(1);
+}

@@ -1,0 +1,12 @@
+<div class="board-block">
+    <div (click)="service.getOneBoard(item)" class="board" [routerLink]="['/board', item.id]">
+        <h3 class="board-title" [ngStyle]="{'color': item.invalid | setColor }">{{ item.title }}</h3>
+        <p class="board-description">{{item.description}}</p>
+        <p class="board-includes" *ngIf="item.subTitleExist ">Task: {{ item.subTitle }}</p>
+        <p class="board-date">{{date | date:'medium'}}</p>
+    </div>
+    <div class="board-buttons">
+        <button (click)="editBoard(item)" class="board-button board-edit">Edit</button>
+        <button (click)="deleteBoard()" class="board-button board-delete">Delete</button>
+    </div>
+</div>

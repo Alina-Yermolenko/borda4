@@ -1,0 +1,48 @@
+.task {
+    &-block {
+        min-width: 100px;
+        min-height: 100px;
+        padding: 20px;
+        margin-bottom: 15px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    &-name {
+
+        &__title{
+            margin: 10px;
+            overflow-wrap: break-word;
+            color: rgb(0, 98, 179);
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        &__time {
+            font-size: 10px;
+            color: rgb(0, 98, 179);
+            text-align: center;
+        }
+
+        &__input{
+            width: 80%;
+            height: 20px;
+            padding: 5px 10px;
+            margin: 5px 0;
+            box-shadow: none;
+            color: rgb(0, 98, 179);
+            border: 2px rgb(0, 98, 179) solid;
+            border-radius: 20px;
+            transition: transform .5s;
+    
+            &:hover {
+                transform: scale(1.05);
+    
+                &::placeholder {
+                    transition: color .5s;
+                    color: rgb(0, 98, 179);
+                }
+            }
+        }
+    }
+}

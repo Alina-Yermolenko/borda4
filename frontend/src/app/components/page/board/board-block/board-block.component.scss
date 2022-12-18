@@ -1,0 +1,68 @@
+.tasks {
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+
+  &-creation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__button {
+      height: 40px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      background-color: white;
+      color: rgb(0, 98, 179);
+      border: 3px solid rgb(0, 98, 179);
+      transition: 0.3s;
+
+      &:hover {
+        border: 3px solid rgb(0, 98, 179);
+        transform: scale(1.1);
+        background-color: rgb(0, 98, 179);
+        color: white;
+        z-index: 20;
+      }
+
+      &:active {
+        transform: scale(1);
+      }
+    }
+
+    &__color {
+      align-items: center;
+      border: 1px solid black;
+      padding: 0;
+      margin: 0;
+      background: inherit;
+      width: 40px;
+      height: 20px;
+      overflow: hidden;
+    }
+  }
+
+  &-block {
+    min-width: 180px;
+    max-width: 250px;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-task {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  }
+
+}

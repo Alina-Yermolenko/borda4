@@ -1,0 +1,24 @@
+<div class="header">
+    <div>
+        <h2 blueBackground class="header-title">{{ title | uppercase}}</h2>
+        <p class="header-description">{{description | titlecase }}</p>
+        <a *ngIf="showBack" href="/dashboard" class="header-back">
+            <img class="image arrow-button" src="/assets/images/arrow.png" alt="arrow">
+        </a>
+    </div>
+    <div class="buttons">
+        <div class="header-inputs">
+            <input class="header-input" placeholder="Filter by input" [(ngModel)]="filterInput" type="text" (keyup)="filterItems()">
+        </div>
+        <select class="header-input" name="sort" id="sort" (change)="sortItems()" [(ngModel)]="selectedValue">
+            <option value="" disabled selected="selected">Sort by </option>
+            <option value="name">Name</option>
+            <option value="date">Date of creation</option>
+            <option *ngIf=service.showInDashboard value="number">Number of tasks</option>
+        </select>
+        <div class="header-buttons">
+            <button class="header-button" (click)="changeOrder('asc')">ASC</button>
+            <button class="header-button" (click)="changeOrder('desc')">DESC</button>
+        </div>
+    </div>
+</div>

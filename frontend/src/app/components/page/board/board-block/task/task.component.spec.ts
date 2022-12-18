@@ -1,0 +1,31 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { TaskComponent } from './task.component';
+import { getTitlePipe } from 'src/app/pipes/getTitle.pipe'
+import { setColorPipe } from 'src/app/pipes/setColor.pipe'
+
+describe('TaskComponent', () => {
+  let component: TaskComponent;
+  let fixture: ComponentFixture<TaskComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [TaskComponent, getTitlePipe, setColorPipe]
+    })
+      .compileComponents();
+
+    fixture = TestBed.createComponent(TaskComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+
+  it('function checkDone should return true', () => {
+    const callFunc = component.checkDone();
+    expect(callFunc).toBeTrue();
+  });
+});

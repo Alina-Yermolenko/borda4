@@ -1,0 +1,21 @@
+<div class="modal">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm"  class="modal-block">
+    <h2 class="modal-title">{{modalTitle}} title</h2>
+    <div class="modal-inputs">
+      <input type="text" placeholder="Title" id="inputTitle" class="modal-input" name="inputTitle"
+        [(ngModel)]="inputTitle" required>
+      <input type="text" placeholder="Description" [(ngModel)]="inputText" name="inputText"
+        *ngIf=modalService.showCreateModal class="modal-input">
+      <div style="color:red">
+        <p>
+          {{textDiv}}
+        </p>
+      </div>
+    </div>
+    <div class="modal-buttons">
+      <button *ngIf=modalService.showCreateModal class="modal-button" type="submit">Create</button>
+      <button type="button" (click)="editInfo()" *ngIf=modalService.showEditButton class="modal-button">Edit</button>
+      <button type="button" (click)="displayModal()" class="modal-button">Close</button>
+    </div>
+  </form>
+</div>

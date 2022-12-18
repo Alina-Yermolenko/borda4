@@ -1,0 +1,32 @@
+<div class="task-buttons__block">
+    <div class="task-buttons__block-more">
+        <div blueBackground (click)="editTask(true)" class="button edit-button">
+            <img class="image edit-image" src="/assets/images/edit.png" alt="edit">
+        </div>
+        <div blueBackground (click)="deleteTask()" class="button delete-button">
+            <img class="image delete-image" src="/assets/images/delete.png" alt="bin">
+        </div>
+        <div blueBackground *ngIf="check" (click)="archiveTask()" class="button archive-button">
+            <img class="image archive-image" src="/assets/images/archive.png" alt="archive">
+        </div>
+        <div blueBackground class="button button-show-comments" (click)="showCommentsFunc()">
+            <img class="image show-image" src="/assets/images/comment.png" alt="comment">
+        </div>
+    </div>
+
+    <div class="comments" *ngIf="showComments">
+        <div class="comments-creation">
+            <input [(ngModel)]="comment" class="task-buttons__input write-comment" type="text"
+                placeholder="Write a comment">
+            <button (click)="createComment()" blueBackground class="button add-comment">+</button>
+        </div>
+        <ul class="comments-list" *ngFor="let oneComment of item.comments">
+            <li class="comments-item ">
+                <p>{{oneComment}}</p>
+                <div (click)="deleteComment()" class="button delete-comment">
+                    <img class="image delete-image" src="/assets/images/delete.png" alt="bin">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

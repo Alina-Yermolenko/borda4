@@ -1,0 +1,43 @@
+<app-header [singleBoard]="singleBoard"
+></app-header>
+<div class="all-tasks" cdkDropListGroup>
+  <app-board-block
+    class="tasks-list board-todo"
+    [nameTitle]="'Todo'" 
+    [nameId]="'todo'"
+    [singleBoard]="singleBoard"
+    cdkDropList
+    id="todo-list"
+    [cdkDropListData]="singleBoard.todo"
+    [cdkDropListConnectedTo]="['inProgress-list', 'done-list']"
+    (cdkDropListDropped)="drop($event)"
+  >
+  </app-board-block>
+  <app-board-block 
+    class="tasks-list board-inProgress" 
+    [nameTitle]="'In progress'" 
+    [nameId]="'inProgress'" 
+    [singleBoard]="singleBoard"
+    cdkDropList
+    id="inProgress-list"
+    [cdkDropListData]="singleBoard.inProgress"
+    [cdkDropListConnectedTo]="['todo-list', 'done-list']"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+  </app-board-block>
+  <app-board-block 
+    class="tasks-list board-done" 
+    [nameTitle]="'Done'" 
+    [nameId]="'done'" 
+    [singleBoard]="singleBoard"
+    cdkDropList
+    id="done-list"
+    [cdkDropListData]="singleBoard.done"
+    [cdkDropListConnectedTo]="['todo-list', 'inProgress-list']"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+   >
+  </app-board-block>
+  
+</div>

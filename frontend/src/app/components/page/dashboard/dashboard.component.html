@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="board-item">
+  <button (click)="showModalBoard()" class="board-item__create">+</button>
+  <app-modal 
+    (showModalBoard)="createBoard($event)" 
+    *ngIf=showModal 
+    [handler]="addBoard" 
+    [editHandler]="editItem"
+  >
+  </app-modal>
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <ul
+  class="board-list" 
+  >
+    <li 
+    class="board-task" 
+    *ngFor="let board of service.renderBoards"
+  >
+    <app-board-list 
+      (showModalBoard)="createBoard($event)"
+      [list]="renderBoards" 
+      [item]="board"
+    ></app-board-list>
+    </li>
+  </ul>
+  <div>{{service.boardsDiv}}</div>
+</div>

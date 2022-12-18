@@ -1,0 +1,64 @@
+.board {
+    &-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px 0;
+        align-items: center;
+
+        &__create {
+            box-sizing: border-box;
+            height: 150px;
+            width: 150px;
+            margin: 0 auto;
+            background-color: white;
+            font-size: 30px;
+            border-radius: 60px;
+            color: rgb(0, 98, 179);
+            border: 3px rgb(0, 98, 179) solid;
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.1);
+                background-color: rgb(0, 98, 179);
+                color: white;
+            }
+
+            &:active {
+                transform: scale(1);
+            }
+        }
+
+    }
+
+    &-list{
+        display: contents;
+
+    }
+
+    &-task {
+        box-sizing: border-box;
+        margin: 10px;
+        width: 220px;
+        min-height: 200px;
+        padding: 0;
+        list-style: none;
+        border: 3px solid white;
+        background-color: rgb(0, 98, 179);
+        color: white;
+        border-radius: 70px 20px;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: white;
+            color: rgb(0, 98, 179);
+        }
+
+        &:active {
+            transform: scale(1);
+        }
+    }
+
+
+}

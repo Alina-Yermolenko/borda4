@@ -1,0 +1,17 @@
+<div class="tasks">
+  <h2>{{nameTitle}}</h2>
+  <div [style.background-color]="listColor" class="tasks-block">
+    <div class="tasks-creation">
+      <button (click)="createItem()" class="tasks-creation__button">+</button>
+      <input class="tasks-creation__color" type="color" (input)="changeColor($event)" name="colors" id="" />
+    </div>
+    <app-spinner *ngIf="showSpinner"></app-spinner>
+    <ul class="tasks-list">
+      <li class="tasks-item" cdkDrag *ngFor="let item of cdkDropListData">
+        <app-task [nameId]="nameId" [listColor]="listColor" [singleBoard]="singleBoard" [checkIfDone]="checkIfDone()"
+          [boards]="cdkDropListData" [item]="item">
+        </app-task>
+      </li>
+    </ul>
+  </div>
+</div>

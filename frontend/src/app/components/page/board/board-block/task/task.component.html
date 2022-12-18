@@ -1,0 +1,34 @@
+<div class="task-block"
+[ngStyle]="{'background-color': '#ffffff44'}"
+>
+  <input  
+    [id]="[item.id]" 
+    (blur)="addNewItem(taskname, $event)"
+    type="text" 
+    class="task-name__input" 
+    [(ngModel)]="taskname" 
+    placeholder="{{item | getTitle | titlecase}}"
+    *ngIf=showItemInput
+    
+  >
+  <h4 
+    class="task-name__title"
+    *ngIf=!showItemInput 
+    [ngStyle]="{'color': item.invalid | setColor}"
+  >{{ item | getTitle }}
+  </h4>
+  <p 
+    class="task-name__time"
+  >{{ item.createdDate | date:'short'}}
+</p>
+  <app-task-buttons 
+    [(showItemInput)]="showItemInput"
+    [nameId]="nameId"
+    [singleBoard]="singleBoard" 
+    [check]="checkDone()"  
+    (click)="checkDone()" 
+    [item]="item" 
+    [list]="boards">
+  </app-task-buttons>
+</div>
+

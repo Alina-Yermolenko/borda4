@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="login-block">
+        <h1 class="login-title">{{titleDiv}}</h1>
+        <form id="form" class="form">
+            <div class="login-inputs">
+                <input class="input" id="email" [(ngModel)]="emailInput" name="email" type="email" placeholder="Email Adress">
+                <input class="input" id="password" [(ngModel)]="passwordInput" name="password " type="password" placeholder="Password">
+            </div>
+            <div class="login-buttons">
+                <button *ngIf="showRegister" class="login-button" (click)="registerUser(emailInput, passwordInput)" id="register" type="button">Register</button>
+                <button *ngIf="!showRegister" class="login-button" (click)="loginUser()" id="login" type="button">Enter</button>
+            </div>
+            <div class="choose__button">
+                <div (click)="registerForm()" class="login-register choose">
+                    {{ "Create account" | uppercase }}
+                </div>
+                <div (click)="loginAccount()" class="login-log choose">
+                    {{ "Already a user" | uppercase }}
+                </div>
+            </div>
+            <div id="response">{{responseDiv}}</div>
+        </form>
+    </div>
+</div>
+
